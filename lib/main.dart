@@ -1,4 +1,7 @@
-import 'package:adaptive_layout_practice/views/home_view.dart';
+import 'package:adaptive_layout_practice/views/desktop_layout.dart';
+import 'package:adaptive_layout_practice/views/mobile_layout.dart';
+import 'package:adaptive_layout_practice/views/tablet_layout.dart';
+import 'package:adaptive_layout_practice/widgets/adaptive_layout.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +13,17 @@ class AdaptiveApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeView());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AdaptiveLayout(
+        mobileLayout: (context) => MobileLayout(),
+        tabletLayout: (BuildContext context) {
+          return TabletLayout();
+        },
+        desktopLayout: (BuildContext context) {
+          return DesktopLayout();
+         },
+      ),
+    );
   }
 }

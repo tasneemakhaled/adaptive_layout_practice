@@ -1,15 +1,16 @@
 import 'package:adaptive_layout_practice/widgets/custom_drawer.dart';
-import 'package:adaptive_layout_practice/widgets/home_view_body.dart';
+import 'package:adaptive_layout_practice/widgets/custom_list_view.dart';
+import 'package:adaptive_layout_practice/widgets/custom_sliver_list.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class TabletLayout extends StatefulWidget {
+  const TabletLayout({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<TabletLayout> createState() => _TabletLayoutState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _TabletLayoutState extends State<TabletLayout> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
@@ -27,7 +28,12 @@ class _HomeViewState extends State<HomeView> {
           child: Icon(Icons.menu, color: Colors.white),
         ),
       ),
-      body: HomeViewBody(),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: CustomListView()),
+          CustomSliverList(),
+        ],
+      ),
     );
   }
 }
