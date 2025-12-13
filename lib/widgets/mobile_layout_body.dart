@@ -7,12 +7,7 @@ class MobileLayoutBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(child: CustomSliverGrid()),
-        CustomSliverList(),
-      ],
-    );
+    return CustomScrollView(slivers: [CustomSliverGrid(), CustomSliverList()]);
   }
 }
 
