@@ -9,7 +9,7 @@ class CustomSliverList extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Container(
             height: 65,
             decoration: BoxDecoration(

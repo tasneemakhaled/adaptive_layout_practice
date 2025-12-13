@@ -16,7 +16,10 @@ class CustomSliverGrid extends StatelessWidget {
       ),
       itemCount: 4,
       itemBuilder: (context, index) {
-        return CustomItem();
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomItem(),
+        );
       },
     );
   }
