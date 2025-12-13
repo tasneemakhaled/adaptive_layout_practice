@@ -8,9 +8,13 @@ class CustomDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(drawerItemModel.icon),
-      title: Text(
-        drawerItemModel.title,
-        style: TextStyle(color: Color(0xffB4B4B4)),
+      title: FittedBox(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          drawerItemModel.title,
+          style: TextStyle(color: Color(0xffB4B4B4)),
+        ),
       ),
     );
   }
